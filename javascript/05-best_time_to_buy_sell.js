@@ -15,7 +15,24 @@
 // Input: prices = [7,6,4,3,1]
 // Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
-const maxProfit = (nums) => {
+
+// using bruce forte approach
+
+const maxProfit = (prices) => {
+  let largestProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    for (let j = 1; j < prices.length; j++) {
+      let currentProfit = prices[j] - prices[i];
+      if (currentProfit > largestProfit) {
+        largestProfit = currentProfit;
+      }
+    }
+  }
+  return largestProfit;
+};
+
+const maxProfit2 = (nums) => {
   let left = 0;
   let right = 1;
   let max_profit = 0;
@@ -29,6 +46,19 @@ const maxProfit = (nums) => {
     right++;
   }
   return max_profit;
+};
+
+const maxProfit3 = (prices) => {
+  min_price = prices[0];
+  largestProfit = 0;
+  for (let price of prices) {
+    if (price < min_price) {
+      min_price = price;
+    } else if (price - min_price > largestProfit) {
+      largestProfit = price - min_price;
+    }
+  }
+  return largestProfit;
 };
 
 nums = [7, 1, 5, 3, 6, 4];
