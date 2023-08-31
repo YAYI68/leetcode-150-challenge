@@ -37,5 +37,18 @@ const lengthOfLastWord2 = (s) => {
   return end - beg;
 };
 
+const lengthOfLastWord3 = (s) => {
+  let p = s.length;
+  let total = 0;
+
+  while (p > 0) {
+    p--;
+    if (s[p] !== " ") {
+      total++;
+    } else if (total > 0 && s[p] === " ") return total;
+  }
+  return total;
+};
+
 let s = "   fly me   to   the moon  ";
-console.log(lengthOfLastWord2(s));
+console.log(lengthOfLastWord3(s));

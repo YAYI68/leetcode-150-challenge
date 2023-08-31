@@ -38,5 +38,18 @@ def lengthOfLastWord2(s):
     return end - beg
 
 
+def lengthOfLastWord3(s):
+    p, length = len(s), 0
+    while p > 0:
+        p -= 1
+
+        if s[p] != " ":
+            length += 1
+
+        elif length > 0 and s[p] == " ":
+            return length
+    return length
+
+
 s = "   fly me   to   the moon  "
-print(lengthOfLastWord2(s))
+print(lengthOfLastWord3(s))
