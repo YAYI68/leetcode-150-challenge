@@ -26,13 +26,13 @@ const isomorphic = (s, t) => {
   for (let j = 0; j < t.length; j++) {
     map2 += t.indexOf(t[j]);
   }
-  console.log({ map1, map2 });
   if (map1 === map2) {
     return true;
   }
   return false;
 };
 
+// 2nd Approach
 const isomorphic2 = (s, t) => {
   if (s.length != t.length) return false;
   // Create two maps for s & t strings...

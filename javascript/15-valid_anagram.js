@@ -23,12 +23,13 @@ const validAnagram = (s, t) => {
   return true;
 };
 
+// 2nd Approach
 const validAnagram2 = (s, t) => {
   if (s.length !== t.length) return false;
 
-  let common = {};
+  let common = new Map();
   for (let i = 0; i < s.length; i++) {
-    s[i] in common ? common[s[i]]++ : (common = 1);
+    s[i] in common ? common[s[i]]++ : (common[s[i]] = 1);
   }
 
   for (let j = 0; j < t.length; j++) {
@@ -44,4 +45,4 @@ const validAnagram2 = (s, t) => {
 s = "anagram";
 t = "nagaram";
 
-console.log(validAnagram(s, t));
+console.log(validAnagram2(s, t));

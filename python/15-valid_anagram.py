@@ -27,6 +27,8 @@ def validAnagram(s: str, t: str):
             return False
     return True
 
+# 2nd Approach
+
 
 def validAnagram2(s: str, t: str):
     if (len(s) != len(t)):
