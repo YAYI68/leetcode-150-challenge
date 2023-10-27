@@ -36,7 +36,6 @@ const validParentheses = (s) => {
       if (parentheses[opening] !== c) return false;
     }
   }
-  console.log({ stack });
   return stack.length === 0;
 };
 
